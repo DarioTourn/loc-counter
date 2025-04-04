@@ -52,6 +52,8 @@ def count_loc_in_file(file_path:str) -> dict:
                 inside_docstring = True # Caso docstring de varias líneas
                 continue
 
+            # Si la linea tiene un comentario, lo elimino
+            line = re.sub(r'#.*', '', line, flags=re.VERBOSE)
 
             # Calculo el nivel de indentacion de la linea actual
             indentation_level = _indentation_level(line)
