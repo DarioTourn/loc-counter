@@ -5,7 +5,7 @@ Programa contador de líneas lógicas de código, siguiendo los estándares espe
 
 | **Tipo de Sentencia**  | **Incluida** | **Comentarios** |
 |-----------------------|------------|----------------|
-| **Ejecutable**       | Sí         | Llamadas a funciones, returns |
+| **Ejecutable**       | Sí         | Llamadas a funciones |
 | **No ejecutable**    |            |                |
 | **Declaraciones**    | Sí         | Incluye declaraciones de funciones, variables y clases. Las declaraciones multilínea (ejemplo: una lista) se cuentan solo una vez. |
 | **Directivas del Intérprete** | Sí | Imports |
@@ -14,6 +14,5 @@ Programa contador de líneas lógicas de código, siguiendo los estándares espe
 
 | **Aclaraciones**| | **Ejemplos/Casos** |
 |-----------------|-|----------------|
-| **Sentencias vacías** | No ||
-| **Instanciaciones genéricas** | No ||
-| **Palabras clave** | Sí | Contar una línea por cada ocurrencia de las siguientes palabras clave: `switch`, `case`, `break`, `continue`, `if`, `else`, `elif`, `for`, `while`, `try`, `except`, `finally`, `raise`, `with`, `lambda`, etc. |
+| **Sentencias vacías** | No |i.e. `pass`|
+| **Palabras clave** | Sí | Contar una línea por cada ocurrencia de las siguientes palabras clave: `match`, `case`, `break`, `continue`, `if`, `else`, `elif`, `for`, `while`, `try`, `except`, `finally`, `raise`, `with`, `lambda`, etc.. |
