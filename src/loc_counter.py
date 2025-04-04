@@ -124,8 +124,8 @@ def count_loc_in_file(file_path:str) -> dict:
             # una estructura de control u otra palabra reservada
             # (Es decir, una linea de código "general").
             if bool(re.search(r'''
-                                ^\s*[\w.-]+\s+=\s+.+ # Asignacion de variable
-                              | ^\s*\w+\(.*\) # Llamado a funcion
+                                ^\s*[\w.-]+\s+(=|\+=|-=|\*=|/=|%=|\*\*=|//=|&=|\|=|\^=|>>=|<<=)\s+.+ # Asignacion de variable
+                              | ^\s*\w.+\(.*\) # Llamado a funcion
                               | ^\s*match\s+.+ # Match
                               | ^\s*case\s+.+ # Case
                               | ^\s*if\s+.+ # If
@@ -138,7 +138,7 @@ def count_loc_in_file(file_path:str) -> dict:
                               | ^\s*finally\s*: # Finally
                               | ^\s*with\s+.+: # With
                               | ^\s*while\s+.+ # While
-                              | ^\s*return\s+.+ # Return
+                              | ^\s*return\s*.* # Return
                               | ^\s*break\s*: # Break
                               | ^\s*continue\s*: # Continue
                               | ^\s*assert\s+.+ # Assert
