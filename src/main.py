@@ -93,7 +93,7 @@ def main():
                         print(f"\t\tNombre: {method_data['method_name']}")
                         print(f"\t\tCantidad de líneas: {method_data['total_lines']}\n")
                 else:
-                    print("\tNo se encontraron métodos en esta clase.")
+                    print("\tNo se encontraron métodos en esta clase.\n")
         else:
             print("No se encontraron clases en este archivo.")
         print("\n")
