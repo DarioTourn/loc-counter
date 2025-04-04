@@ -208,7 +208,7 @@ def _save_class(classes:dict, current_class_name:str,
         'total_lines': current_class_total_lines,
     }
     if has_methods:
-        classes[current_class_name]['methods'] = current_class_methods
+        classes[current_class_name]['methods'] = current_class_methods.copy()
 
     # Reinicio el contexto de la clase actual
     if context_reset:
@@ -216,7 +216,7 @@ def _save_class(classes:dict, current_class_name:str,
         current_class_name = ''
         has_methods = False
         current_class_method_count = 0
-        current_class_methods = {}
+        current_class_methods.clear()
 
     return current_class_total_lines, current_class_name, has_methods, current_class_method_count
 
