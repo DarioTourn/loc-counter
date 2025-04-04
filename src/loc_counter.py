@@ -15,6 +15,7 @@ def count_loc_in_file(file_path:str) -> dict:
         de funciones.
     """
     file_total_lines = 0
+    inside_docstring = False # Indica si estoy dentro de un docstring
 
     classes = {}
     class_count = 0 # Cantidad de clase detectadas
@@ -38,6 +39,20 @@ def count_loc_in_file(file_path:str) -> dict:
     with open(file_path, 'r') as file:
 
         for line in file:
+            # Verifico si estoy dentro de un docstring
+            if inside_docstring:
+                # Busco el cierre del docstring
+                inside_docstring = not bool(re.search(r'.*"""', line, re.VERBOSE))
+                continue
+
+            # Veo si estoy entrando a un docstring
+            if bool(re.search(r'^\s*"""', line, re.VERBOSE)):
+                if bool(re.search(r'^\s*""".*"""', line, re.VERBOSE)):
+                    continue # Caso docstring de una línea
+                inside_docstring = True # Caso docstring de varias líneas
+                continue
+
+
             # Calculo el nivel de indentacion de la linea actual
             indentation_level = _indentation_level(line)
 
