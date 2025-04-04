@@ -139,8 +139,8 @@ def count_loc_in_file(file_path:str) -> dict:
                               | ^\s*with\s+.+: # With
                               | ^\s*while\s+.+ # While
                               | ^\s*return\s*.* # Return
-                              | ^\s*break\s*: # Break
-                              | ^\s*continue\s*: # Continue
+                              | ^\s*break\s* # Break
+                              | ^\s*continue\s* # Continue
                               | ^\s*assert\s+.+ # Assert
                               | ^\s*del\s+.+ # Del
                               | ^\s*lambda\s+.+ # Lambda
